@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 #[
@@ -55,7 +56,12 @@ ROOT_URLCONF = 'django_test.urls'
 
 WSGI_APPLICATION = 'django_test.wsgi.application'
 
-TEMPLATE_DIRS =['home/django_mj/django_test/templates','home/django_mj/django_test/article/templates',]
+TEMPLATE_DIRS = ( os.path.join(SETTINGS_PATH, 'templates'), )
+
+#TEMPLATE_DIRS =[
+ #   'home/django_mj/django_test/templates',
+ #   'home/django_mj/django_test/article/templates',
+#]
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -86,7 +92,7 @@ USE_TZ = True
 
 path='home/django_mj/django_test/static'
 
-STATIC_ROOT = path.join(PROJECT_ROOT,'static')
+#STATIC_ROOT = path.join(PROJECT_ROOT,'static')
 
 STATIC_URL = '/static/'
 
