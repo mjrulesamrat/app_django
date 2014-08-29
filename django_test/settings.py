@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+PROJECT_DIR = os.path.dirname(__file__)
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 #TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
@@ -93,7 +94,15 @@ USE_TZ = True
 path='home/django_mj/django_test/static'
 
 #STATIC_ROOT = path.join(PROJECT_ROOT,'static')
+#STATIC_ROOT = "home/django_mj/django_test/static"
+#STATIC_ROOT = "/home/django_mj/django_test/static"
 
+#ROOT_PATH = os.path.dirname(__file__)
+
+#STATIC_ROOT = os.path.join(ROOT_PATH, 'static')
+#STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (('assets', 'home/django_mj/django_test/static'),)
+STATICFILES_DIRS = (('assets', '/home/django_mj/django_test/static' ), )
+
+#STATICFILES_DIRS = (os.path.join(PROJECT_DIR, 'static'),)
