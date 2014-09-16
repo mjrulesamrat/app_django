@@ -16,6 +16,7 @@ urlpatterns = patterns('',
      url(r'^accounts/auth', 'django_test.views.auth_view'),
      url(r'^accounts/loggedin', 'django_test.views.loggedin'),
      url(r'^accounts/invalid', 'django_test.views.invalid_login'),
+     
 
     # url(r'^hello_template_simple/$', 'article.views.hello_template_simple'),
     # url(r'^hello_mj_class/$', HelloTemplate.as_view()),

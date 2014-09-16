@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
@@ -47,22 +48,38 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+# default context processors for Django 1.4
+"django.contrib.auth.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n",
+"django.core.context_processors.media",
+"django.core.context_processors.static",
+"django.core.context_processors.tz",
+"django.contrib.messages.context_processors.messages",
+"django.core.context_processors.request",
+"mysite.context_processors.baseurl",
 )
 
 ROOT_URLCONF = 'django_test.urls'
 
 WSGI_APPLICATION = 'django_test.wsgi.application'
 
-TEMPLATE_DIRS = ( os.path.join(SETTINGS_PATH, 'templates'), )
+#TEMPLATE_DIRS = ( os.path.join(SETTINGS_PATH, 'templates'), )
 
 #TEMPLATE_DIRS =[
  #   'home/django_mj/django_test/templates',
- #   'home/django_mj/django_test/article/templates',
-#]
+  #  'home/django_mj/django_test/article/templates',]
+
+TEMPLATE_DIRS = (
+     os.path.join(os.path.dirname(__file__),'../templates'),
+  )
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
