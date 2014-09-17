@@ -16,8 +16,8 @@ urlpatterns = patterns('',
      url(r'^accounts/auth', 'django_test.views.auth_view'),
      url(r'^accounts/loggedin', 'django_test.views.loggedin'),
      url(r'^accounts/invalid', 'django_test.views.invalid_login'),
-     
-
+     #this is latest added send url...17-9-14
+     url(r'^send/$', 'demo1.views.post'),
     # url(r'^hello_template_simple/$', 'article.views.hello_template_simple'),
     # url(r'^hello_mj_class/$', HelloTemplate.as_view()),
 )
